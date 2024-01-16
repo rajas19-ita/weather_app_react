@@ -1,6 +1,7 @@
 import React from "react";
 import { GoDot } from "react-icons/go";
 import { Tooltip } from "react-tooltip";
+import WeatherIcon from "./WeatherIcon";
 
 function ForecastCard({ data, title }) {
     return (
@@ -25,13 +26,13 @@ function ForecastCard({ data, title }) {
                         <div className="flex gap-1 items-start">
                             {item.weatherIcon.map((icon, i) => (
                                 <React.Fragment key={i}>
-                                    <img
-                                        src={icon}
-                                        className=" max-w-[3rem] xxs:max-w-[2.5rem]"
+                                    <div
                                         data-tooltip-id={`my-tooltip-${
                                             item.time + icon
                                         }`}
-                                    />
+                                    >
+                                        <WeatherIcon icon={icon} />
+                                    </div>
                                     <Tooltip
                                         id={`my-tooltip-${item.time + icon}`}
                                         place="right-center"

@@ -1,15 +1,14 @@
 import React from "react";
 import { GoDot } from "react-icons/go";
 import roundTemperature from "../utils/roundTemperature";
+import WeatherIcon from "./WeatherIcon";
 
 function CurrentWeather({ data, units }) {
     return (
         <div className="flex pb-6 pt-3 justify-between items-center">
             <div className="flex items-center gap-4 xxs:gap-3 pl-2 xs:pl-0">
-                <img
-                    src={`/${data.weather[0].icon}.png`}
-                    className="max-w-[3.75rem]"
-                />
+                <WeatherIcon icon={`/${data.weather[0].icon}.png`} size="L" />
+
                 <div className="flex flex-col  ">
                     <div className="flex items-center gap-1">
                         <span className="text-4xl xs:text-[2rem] font-medium">

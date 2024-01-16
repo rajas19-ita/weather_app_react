@@ -62,8 +62,7 @@ function App() {
 
     return (
         <div className=" w-full max-w-xl aspect-[1] xs:h-screen mx-auto flex flex-col">
-            {/* <div className=" w-full max-w-xl aspect-[1/1.015]  mx-auto flex flex-col "> */}
-            <div className="flex items-center">
+            <div className="flex items-center w-full">
                 <ReactSelect
                     isSearchable
                     value={location}
@@ -72,7 +71,7 @@ function App() {
                     isLoading={loadingC}
                     onChange={(location) => setLocation(location)}
                     placeholder="Location"
-                    className="flex-grow"
+                    className="w-[93.5%]"
                 />
                 <UnitSelect units={units} setUnits={setUnits} />
             </div>

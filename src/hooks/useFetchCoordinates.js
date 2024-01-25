@@ -17,17 +17,14 @@ const useFetchCoordinates = () => {
             const json = await response.json();
 
             if (response.ok) {
-                json.features.forEach((location) =>
-                    setCoordinatesList((prev) => [
-                        ...prev,
-                        {
-                            label: location.place_name,
-                            value: {
-                                longitude: location.center[0],
-                                latitude: location.center[1],
-                            },
+                setCoordinatesList(
+                    json.features.map((location) => ({
+                        label: location.place_name,
+                        value: {
+                            longitude: location.center[0],
+                            latitude: location.center[1],
                         },
-                    ])
+                    }))
                 );
             }
             setLoadingC(false);
